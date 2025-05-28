@@ -1,0 +1,3 @@
+[submodule "docker-gnuradio"]
+	path = docker-gnuradio
+	url = https://github.com/git-artes/docker-gnuradio.git
