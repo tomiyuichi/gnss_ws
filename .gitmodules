@@ -1,3 +1,6 @@
 [submodule "docker-gnuradio"]
 	path = docker-gnuradio
 	url = https://github.com/git-artes/docker-gnuradio.git
+[submodule "gps-sdr-sim"]
+	path = gps-sdr-sim
+	url = https://github.com/osqzss/gps-sdr-sim.git
