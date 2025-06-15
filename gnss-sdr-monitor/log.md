@@ -88,3 +88,111 @@ root@mori-Inspiron5491:/#
 
 ```
 
+
+```bash
+tomi@mori-Inspiron5491:~/gnss_ws/gnss-sdr-monitor$ ./exec.sh 
+non-network local connections being added to access control list
+root@mori-Inspiron5491:/# ls
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@mori-Inspiron5491:/# history
+    1  apt
+    2  apt update
+    3  apt install build-essential cmake git libboost-dev libboost-system-dev
+    4  apt install -y libprotobuf-dev protobuf-compiler qtbase5-dev qtdeclarative5-dev qtpositioning5-dev
+    5  exit
+    6  ls
+    7  apt install -y libqt5charts5-dev qml-module-qtquick2 qml-module-qtquick-controls2 qml-module-qtquick-window2
+    8  apt install -y qml-module-qtlocation qml-module-qtpositioning qml-module-qtquick-layouts
+    9  ls
+   10  pwd
+   11  cd
+   12  ls
+   13  git clone https://github.com/acebrianjuan/gnss-sdr-monitor
+   14  cd ./gnss-sdr-monitor/
+   15  ls
+   16  cd ./build/
+   17  ls
+   18  ls -lah
+   19  cmake ..
+   20  apt update
+   21  ping 8.8.8.8
+   22  ifconfig
+   23  exit
+   24  apt install net-tools
+   25  ifconfig
+   26  ping google.com
+   27  apt install ping
+   28  apt install iputils-ping
+   29  exit
+   30  apt install iputils-ping
+   31  ping google.com
+   32  apt install -y libprotobuf-dev protobuf-compiler qtbase5-dev qtdeclarative5-dev qtpositioning5-dev
+   33  apt install -y libqt5charts5-dev qml-module-qtquick2 qml-module-qtquick-controls2 qml-module-qtquick-window2
+   34  apt install -y libqt5charts5-dev
+   35  apt update
+   36  apt install -y libqt5charts5-dev
+   37  ping 8.8.8.8
+   38  apt install -y libqt5charts5-dev --fix-missing
+   39  ping 8.8.8.8
+   40  sed -i 's|http://archive.ubuntu.com/ubuntu|http://ftp.riken.jp/Linux/ubuntu|g' /etc/apt/sources.list
+   41  sed -i 's|http://security.ubuntu.com/ubuntu|http://ftp.riken.jp/Linux/ubuntu|g' /etc/apt/sources.list
+   42  apt update
+   43  apt install -y libqt5charts5-dev
+   44  apt install -y libqt5charts5-dev qml-module-qtquick2 qml-module-qtquick-controls2 qml-module-qtquick-window2
+   45  apt install -y libprotobuf-dev protobuf-compiler qtbase5-dev qtdeclarative5-dev qtpositioning5-dev
+   46  apt install -y build-essential cmake git libboost-dev libboost-system-dev
+   47  apt install -y libqt5charts5-dev qml-module-qtquick2 qml-module-qtquick-controls2 qml-module-qtquick-window2
+   48  apt install -y qml-module-qtlocation qml-module-qtpositioning qml-module-qtquick-layouts
+   49  cd
+   50  ls
+   51  cd ./gnss-sdr-monitor/
+   52  cd ./build/
+   53  ls
+   54  rm -rf *
+   55  cmake ..
+   56  ls
+   57  make
+   58  make install
+   59  cd ../
+   60  cd ../]
+   61  cd
+   62  gnss-sdr-monitor
+   63  exit
+   64  gnss-sdr-monitor 
+   65  exit
+   66  gnss-sdr-monitor 
+   67  exit
+   68  gnss-sdr-monitor 
+   69  exit
+   70  apt install -y libgl1-mesa-glx libgl1-mesa-dri mesa-utils
+   71  glxinfo | grep "OpenGL"
+   72  export QT_QUICK_BACKEND=software
+   73  gnss-sdr-monitor 
+   74  exit
+   75  gnss-sdr-monitor 
+   76  exit
+   77  export QT_QUICK_BACKEND=software
+   78  gnss-sdr-monitor 
+   79  exit
+   80  ls
+   81  history
+root@mori-Inspiron5491:/# gnss-sdr-monitor 
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+Settings Loaded
+Settings Loaded
+libGL error: MESA-LOADER: failed to retrieve device information
+QOpenGLFramebufferObject: Framebuffer incomplete attachment.
+QOpenGLFramebufferObject: Framebuffer incomplete, missing draw buffer.
+QOpenGLFramebufferObject: Framebuffer incomplete, missing draw buffer.
+QOpenGLFramebufferObject: Framebuffer incomplete, missing draw buffer.
+QOpenGLFramebufferObject: Framebuffer incomplete, missing attachment.
+Segmentation fault (core dumped)
+root@mori-Inspiron5491:/# export QT_QUICK_BACKEND=software
+root@mori-Inspiron5491:/# gnss-sdr-monitor 
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+Settings Loaded
+Settings Loaded
+libGL error: MESA-LOADER: failed to retrieve device information
+Settings Saved
+
+```

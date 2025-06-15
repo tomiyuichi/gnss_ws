@@ -6,7 +6,7 @@ docker run --name gnss-sdr-monitor-gui \
           -h $HOSTNAME \
           -v $HOME/.Xauthority:/home/$USER/.Xauthority \
           -v $HOME:/home/$USER/ \
-	  -it ubuntu:20.04 bash
+	  -it gnss-sdr-monitor bash
 
 
 

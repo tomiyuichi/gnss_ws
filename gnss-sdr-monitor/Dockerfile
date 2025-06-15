@@ -1,45 +1,30 @@
 FROM ubuntu:20.04
 LABEL maintainer="tomi@typc.local"
 
-#ENV DEBIAN_FRONTEND=noninteractive
-
 RUN apt update
+# タイムゾーンを環境変数で設定
+ENV TZ=Asia/Tokyo
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt install -y tzdata
+RUN ln -fs /usr/share/zoneinfo/$TZ /etc/localtime
+RUN dpkg-reconfigure --frontend noninteractive tzdata
 
 RUN apt install -y build-essential cmake git libboost-dev libboost-system-dev
+# libqt5 は標準ミラー（archive.ubuntu.com）が混雑している、またはルーティング的に不安定なときがあります。
+# /etc/apt/sources.list を以下のように編集して、日本のミラー（理研やJAISTなど）に変更する。
+RUN sed -i 's|http://archive.ubuntu.com/ubuntu|http://ftp.riken.jp/Linux/ubuntu|g' /etc/apt/sources.list
+RUN sed -i 's|http://security.ubuntu.com/ubuntu|http://ftp.riken.jp/Linux/ubuntu|g' /etc/apt/sources.list
+RUN apt update
 RUN apt install -y libprotobuf-dev protobuf-compiler qtbase5-dev qtdeclarative5-dev qtpositioning5-dev
 RUN apt install -y libqt5charts5-dev qml-module-qtquick2 qml-module-qtquick-controls2 qml-module-qtquick-window2
 RUN apt install -y qml-module-qtlocation qml-module-qtpositioning qml-module-qtquick-layouts
 
-# # else it will output an error about Gtk namespace not found
-# RUN apt-get install -y gir1.2-gtk-3.0
+RUN git clone https://github.com/acebrianjuan/gnss-sdr-monitor
+RUN cd ./gnss-sdr-monitor/build
+RUN cmake ..
+RUN make
+RUN make install
 
-# # to have add-apt-repository available
-# RUN apt-get install -y software-properties-common
+RUN export QT_QUICK_BACKEND=software
 
-# RUN add-apt-repository -y ppa:gnuradio/gnuradio-releases-3.9
-
-# # create user gnuario with sudo (and password gnuradio)
-# RUN apt-get install -y sudo
-# RUN useradd --create-home --shell /bin/bash -G sudo gnuradio
-# RUN echo 'gnuradio:gnuradio' | chpasswd
-
-# # I create a dir at home which I'll use to persist after the container is closed (need to change it's ownership)
-# RUN mkdir /home/gnuradio/persistent  && chown gnuradio /home/gnuradio/persistent
-
-# RUN apt-get update
-
-# RUN apt-get install -y gnuradio
-
-# # installing other packages needed for downloading and installing OOT modules
-# RUN apt-get install -y gnuradio-dev cmake git libboost-all-dev libcppunit-dev liblog4cpp5-dev python3-pygccxml pybind11-dev liborc-dev
-
-# # of course, nothing useful can be done without vim
-# RUN apt-get install -y vim 
-
-# USER gnuradio
-
-# WORKDIR /home/gnuradio
-
-# ENV PYTHONPATH "${PYTHONPATH}:/usr/local/lib/python3/dist-packages"
-
-# CMD bash
